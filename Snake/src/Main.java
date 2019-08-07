@@ -5,11 +5,7 @@ public class Main{
         Window win = new Window();
         win.add(new Frame());
 
-        KeyChecker checker = new KeyChecker();
-        win.addKeyListener(new KeyChecker());
-        if(checker.k == 'a'){
-            System.out.println("a");
-        }
+        KeyChecker cheker = new KeyChecker(win);
 
     }
 }

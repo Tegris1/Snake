@@ -1,21 +1,34 @@
-import java.awt.event.KeyAdapter;
+import javax.swing.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class KeyChecker extends KeyAdapter {
-    public char k;
+public class KeyChecker extends JFrame implements KeyListener {
+    public KeyChecker(JFrame frame){
+        frame.addKeyListener(this);
+    }
 
-    public KeyChecker(){}
-    public void keyPressed(KeyEvent event){
-        char ch = event.getKeyChar();
-        k = ch;
-
-        if(ch=='w'){
-            System.out.println("w");
+    @Override
+    public void keyPressed(KeyEvent e){
+        int key = e.getKeyChar();
+        switch (key){
+            case 'w':
+                System.out.println("w");
+                break;
+            case 's':
+                System.out.println("s");
+                break;
+            case 'a':
+                System.out.println("a");
+                break;
+            case 'd':
+                System.out.println("d");
+                break;
         }
-        if(event.getKeyCode()==KeyEvent.VK_HOME){
-            System.out.println("Keys : "+ event.getKeyCode());
-        }
+    }
+    public void keyReleased(KeyEvent e){
 
+    }
+    public void keyTyped(KeyEvent e){
 
     }
 
